@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throttler", "Throttler\Throttler.csproj", "{A5537DCB-CE87-4989-8A0A-7522F18E6197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throttler.Test", "Throttler.Test\Throttler.Test.csproj", "{D5289D6F-D4C5-4168-8A4A-FABB4B1FF961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThrottlerTester", "ThrottlerTester\ThrottlerTester.csproj", "{F228DC1E-2470-4943-8B1A-A57108FF7CE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5537DCB-CE87-4989-8A0A-7522F18E6197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5537DCB-CE87-4989-8A0A-7522F18E6197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5537DCB-CE87-4989-8A0A-7522F18E6197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5537DCB-CE87-4989-8A0A-7522F18E6197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5289D6F-D4C5-4168-8A4A-FABB4B1FF961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5289D6F-D4C5-4168-8A4A-FABB4B1FF961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5289D6F-D4C5-4168-8A4A-FABB4B1FF961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5289D6F-D4C5-4168-8A4A-FABB4B1FF961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F228DC1E-2470-4943-8B1A-A57108FF7CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F228DC1E-2470-4943-8B1A-A57108FF7CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F228DC1E-2470-4943-8B1A-A57108FF7CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F228DC1E-2470-4943-8B1A-A57108FF7CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37CDCED6-D65E-4845-AA6C-AF8A20E87A80}
+	EndGlobalSection
+EndGlobal
