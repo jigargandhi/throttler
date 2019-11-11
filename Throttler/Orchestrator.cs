@@ -35,10 +35,9 @@
                 var intArray = formatter.Read(message);
                 messageProcessor.Publish(JsonConvert.DeserializeObject<List<int>>(intArray.ToString()));
             }
-            catch (MessageQueueException)
+            catch (MessageQueueException ex)
             {
-
-
+                Console.WriteLine(ex);
             }
         }
 

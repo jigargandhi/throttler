@@ -3,9 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
-    using System.Reactive;
     using System.Reactive.Subjects;
     using System.Reactive.Linq;
     using System.Reactive.Concurrency;
@@ -13,26 +11,24 @@
     public class MessageProcessor
     {
         private readonly IApiClient client;
-        private readonly int notificationRate;
-
+        private readonly int requestsPerSecond;
         private readonly TimeSpan timeSpan;
         private IScheduler scheduler;
-        public MessageProcessor(IApiClient client, int notificationRate) : this(client, notificationRate, ThreadPoolScheduler.Instance)
+
+        public MessageProcessor(IApiClient client, int requestsPerSecond) 
+            : this(client, requestsPerSecond, ThreadPoolScheduler.Instance)
         {
 
         }
 
-        public MessageProcessor(IApiClient client, int notificationRate, IScheduler scheduler)//: this(client, notificationRate)
+        public MessageProcessor(IApiClient client, int requestsPerSecond, IScheduler scheduler)
         {
             this.client = client;
-            this.notificationRate = notificationRate; // per second
-            timeSpan = TimeSpan.FromMilliseconds(1000.0 / notificationRate);
+            this.requestsPerSecond = requestsPerSecond; // per second
+            timeSpan = TimeSpan.FromMilliseconds(1000.0 / requestsPerSecond);
             this.scheduler = scheduler;
         }
-        public async Task SendNotification(int userId)
-        {
-            await client.PostAsync(userId);
-        }
+
         public void Publish(List<int> userIds)
         {
             var subject = new Subject<int>();
@@ -45,6 +41,11 @@
                 .Subscribe();
             userIds.ForEach(userId => subject.OnNext(userId));
             subject.OnCompleted();
+        }
+
+        public async Task SendNotification(int userId)
+        {
+            await client.PostAsync(userId);
         }
 
     }
